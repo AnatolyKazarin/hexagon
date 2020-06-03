@@ -1,0 +1,27 @@
+include ../button/button
+-
+  var items = [
+    {title: "О нас", link: "#"},
+    {title: "Услуги", link: "#"},
+    {title: "Вакансии", link: "#"},
+    {title: "Новости", link: "#"},
+    {title: "Соглашения", link: "#"}
+  ]
+
+mixin menu(items)
+  ul&attributes(attributes)
+    each item in items
+      li.menu-item
+        a(href=item.link)= item.title
+      
+header.page-header
+  .page-header__wrapper
+    a(href="index.html")
+      img.logo(src=require("./components/header/img/Logo.svg").default)
+    nav.main-nav
+      +menu(items).main-nav__list
+    ul.user-menu
+      li
+        +btn({title: "Войти", class: "button--no-fill"})
+      li
+        +btn({title: "Зарегистрироваться"})
