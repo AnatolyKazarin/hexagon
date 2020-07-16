@@ -1,20 +1,193 @@
 @import "~normalize.css";
-@import "components/button/button.scss";
-@import "components/header/header.scss";
-@import "components/content/content.scss";
-@import "components/footer/footer.scss";
 
 body {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   line-height: 17px;
   margin: 0;
-  color: rgba(31, 32, 65, 0.5);
-  -webkit-font-smoothing: antialiased;
+  color: white;
+  overflow-x: hidden;
 }
 
 .wrapper {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  background: radial-gradient(circle, rgb(78, 82, 123), rgb(3, 10, 35));
+  width: 100%;
+  overflow: visible;
 }
+
+h2 {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.4s;
+}
+
+a:hover {
+  color: grey;
+}
+
+.main-nav__list {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-nav__item {
+  margin-right: 40px;
+}
+
+.team {
+  width: 40%;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  padding: 48px;
+  border-radius: 10px;
+  span {
+    display: inline-block;
+    transform: skewX(30deg);
+    font-size: 20px;
+  }
+  &:first-child {
+    text-align: right;
+  }
+}
+
+.team-first {
+  position: absolute;
+  transform: translate(0, -130%) skewX(-30deg);
+  transform-origin: bottom right;
+  top: 50%;
+  left: -10%;
+}
+
+.team-second {
+  transform: skewX(-30deg) translate(-50%, -50%);
+  transform-origin: top left;
+  position: absolute;
+  top: 54%;
+  left: 84%;
+}
+
+// Гексагон
+
+.hexagon {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  transition: all 0.4s;
+}
+.hexagon .hexagon-shape {
+  position: absolute;
+  overflow: hidden;
+  display: inline-block;
+  width: 120px;
+  height: 104px;
+  transform: skewX(30deg);
+  border-radius: 6px;
+}
+.hexagon .hexagon-shape *,
+.hexagon .hexagon-shape *:before {
+  display: block;
+  overflow: hidden;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+}
+.hexagon .hexagon-shape .hexagon-shape-inner {
+  transform: skewX(-30deg) rotate(60deg) skewX(30deg);
+}
+.hexagon .hexagon-shape:first-child .hexagon-shape-inner:before,
+.hexagon .hexagon-shape .hexagon-shape-inner-2 {
+  transform: skewX(-30deg) rotate(60deg) skewX(30deg);
+  background: white;
+  content: '';
+}
+.hexagon .hexagon-content {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  line-height: 1.5;
+  color: black;
+}
+.hexagon .hexagon-content .content-title {
+  font-size: 14px;
+  padding-top: 30px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.content-place {
+  font-size: 8px;
+  margin: 5px 0;
+  margin-top: 10px;
+}
+
+.hexagon .hexagon-content h4.content-title {
+  padding: 0;
+  margin: 5px 0;
+  margin-top: -10px;
+}
+
+.content-time {
+  font-size: 8px;
+}
+
+.content-button {
+  font-size: 6px;
+  padding: 4px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#hexagon1 {
+  position: absolute;
+  transform-origin: top left;
+  transform: scale(1) translate(-50%, -50%);
+  top: 79%;
+  left: 21%;
+}
+
+#hexagon2 {
+  position: absolute;
+  transform-origin: top left;
+  transform: scale(1.5) translate(-50%, -50%);
+  top: 67%;
+  left: 33%;
+}
+
+#hexagon3 {
+  position: absolute;
+  transform-origin: top left;
+  transform: scale(2.3) translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+#hexagon4 {
+  position: absolute;
+  transform-origin: top left;
+  transform: scale(1.5) translate(-50%, -50%);
+  top: 33%;
+  left: 67%;
+}
+
+#hexagon5 {
+  position: absolute;
+  transform-origin: top left;
+  transform: scale(1) translate(-50%, -50%);
+  top: 21%;
+  left: 79%;
+}
+

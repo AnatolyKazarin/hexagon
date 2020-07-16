@@ -6,16 +6,51 @@ html(lang="en")
     meta(name="keywords" content="")
     meta(name="viewport" content="width=1440, initial-scale=1")
     link(rel="icon" href="https://www.w3.org/html/logo/badge/html5-badge-h-solo.png")
-    title Пример страницы
+    title Расписание матчей
     link(rel="stylesheet" type="text/css" href="main.css")
     link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet")
-
   body
-    include ./components/header/header
-    
-    include ./components/content/content
-    
-    include ./components/footer/footer
-
-
-    script(src="main.js")
+    .wrapper
+      header
+        h2 Билеты и абонементы
+        nav.main-nav
+          ul.main-nav__list
+            li.main-nav__item
+              a(href="#") Как купить?
+            li.main-nav__item
+              a(href="#") Правила
+            li.main-nav__item
+              a(href="#") Возврат билетов
+        a.user-login(href="#") Войти
+        a.hidden-menu(href="#") x
+      main
+        p.team.team-first 
+          span Соперник №1
+        p.team.team-second 
+          span Соперник №2
+        .hexagon#hexagon1
+          .hexagon-shape
+            .hexagon-shape-inner
+              .hexagon-shape-inner-2
+          .hexagon-content
+        .hexagon#hexagon2
+          .hexagon-shape
+            .hexagon-shape-inner
+              .hexagon-shape-inner-2
+          .hexagon-content
+        .hexagon#hexagon3
+          .hexagon-shape
+            .hexagon-shape-inner
+              .hexagon-shape-inner-2
+          .hexagon-content
+        .hexagon#hexagon4
+          .hexagon-shape
+            .hexagon-shape-inner
+              .hexagon-shape-inner-2
+          .hexagon-content
+        .hexagon#hexagon5
+          .hexagon-shape
+            .hexagon-shape-inner
+              .hexagon-shape-inner-2
+          .hexagon-content
+  script(src="main.js")

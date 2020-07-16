@@ -6,37 +6,67 @@
     <meta name="keywords" content="">
     <meta name="viewport" content="width=1440, initial-scale=1">
     <link rel="icon" href="https://www.w3.org/html/logo/badge/html5-badge-h-solo.png">
-    <title>Пример страницы</title>
+    <title>Расписание матчей</title>
     <link rel="stylesheet" type="text/css" href="main.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap" rel="stylesheet">
   </head>
   <body>
-    <header class="page-header">
-      <div class="page-header__wrapper"><a href="index.html"><img class="logo" src="img/Logo.svg"></a>
+    <div class="wrapper">
+      <header>
+        <h2>Билеты и абонементы</h2>
         <nav class="main-nav">
-              <ul class="main-nav__list">
-                <li class="menu-item"><a href="#">О нас</a></li>
-                <li class="menu-item"><a href="#">Услуги</a></li>
-                <li class="menu-item"><a href="#">Вакансии</a></li>
-                <li class="menu-item"><a href="#">Новости</a></li>
-                <li class="menu-item"><a href="#">Соглашения</a></li>
-              </ul>
-        </nav>
-        <ul class="user-menu">
-          <li>
-                <div class="module-border-wrap">
-                  <button class="button button--no-fill">Войти</button>
-                </div>
-          </li>
-          <li>
-                <div class="module-border-wrap">
-                  <button class="button">Зарегистрироваться</button>
-                </div>
-          </li>
-        </ul>
-      </div>
-    </header>
-<div class="container"><img src="img/background.jpg"></div>
-    <script src="main.js"></script>
+          <ul class="main-nav__list">
+            <li class="main-nav__item"><a href="#">Как купить?</a></li>
+            <li class="main-nav__item"><a href="#">Правила</a></li>
+            <li class="main-nav__item"><a href="#">Возврат билетов</a></li>
+          </ul>
+        </nav><a class="user-login" href="#">Войти</a><a class="hidden-menu" href="#">x</a>
+      </header>
+      <main>
+        <p class="team team-first"> <span>Соперник №1</span></p>
+        <p class="team team-second"> <span>Соперник №2</span></p>
+        <div class="hexagon" id="hexagon1">
+          <div class="hexagon-shape">
+            <div class="hexagon-shape-inner">
+              <div class="hexagon-shape-inner-2"></div>
+            </div>
+          </div>
+          <div class="hexagon-content"></div>
+        </div>
+        <div class="hexagon" id="hexagon2">
+          <div class="hexagon-shape">
+            <div class="hexagon-shape-inner">
+              <div class="hexagon-shape-inner-2"></div>
+            </div>
+          </div>
+          <div class="hexagon-content"></div>
+        </div>
+        <div class="hexagon" id="hexagon3">
+          <div class="hexagon-shape">
+            <div class="hexagon-shape-inner">
+              <div class="hexagon-shape-inner-2"></div>
+            </div>
+          </div>
+          <div class="hexagon-content"></div>
+        </div>
+        <div class="hexagon" id="hexagon4">
+          <div class="hexagon-shape">
+            <div class="hexagon-shape-inner">
+              <div class="hexagon-shape-inner-2"></div>
+            </div>
+          </div>
+          <div class="hexagon-content"></div>
+        </div>
+        <div class="hexagon" id="hexagon5">
+          <div class="hexagon-shape">
+            <div class="hexagon-shape-inner">
+              <div class="hexagon-shape-inner-2"></div>
+            </div>
+          </div>
+          <div class="hexagon-content"></div>
+        </div>
+      </main>
+    </div>
   </body>
+  <script src="main.js"></script>
 </html>
