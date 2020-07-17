@@ -43,9 +43,9 @@ const EVENTS = [
   },
 ];
 
-let RATIO = document.documentElement.clientWidth/1266;
+const RATIO = document.documentElement.clientWidth/1266;
 
-let POSITIONS = [
+const POSITIONS = [
   'transform: scale(0) translate(-50%, -50%); top: 100%; left: 0%;',
   'transform: scale(0) translate(-50%, -50%); top: 88%; left: 10%;',
   `transform: scale(${1*RATIO}) translate(-50%, -50%); top: 79%; left: 21%;`,
@@ -62,6 +62,8 @@ const hexagonsContent = document.querySelectorAll('.hexagon-content');
 const teamFirstPanel = document.querySelector('.team-first');
 const teamSecondPanel = document.querySelector('.team-second');
 
+//Функция отрисовки данных на центральном гексагоне
+
 function fillMiddleHex(i) {
   hexagonsContent[i].innerHTML = `
     <p class="content-place">${EVENTS[i].place}<p>
@@ -73,6 +75,8 @@ function fillMiddleHex(i) {
   teamSecondPanel.innerHTML = `<span>${EVENTS[i].team2}</span>`;
 }
 
+//Отрисовка дат на всех гексагонах
+
 function fillOuterHex(i) {
   hexagonsContent[i].innerHTML = `<div class="content-title">${EVENTS[i].date}<br>${EVENTS[i].month}</div>`;
 }
@@ -82,10 +86,13 @@ for (let i = 0; i < hexagonsContent.length; i++) {
 }
 fillMiddleHex(2);
 
-const wrapper = document.querySelector('.wrapper');
-const carousel = document.querySelector('.carousel');
+//Задание ширины окна пользователя
 
-wrapper.setAttribute('style', `height: ${document.documentElement.clientHeight+10}px`);
+const wrapper = document.querySelector('.wrapper');
+
+wrapper.setAttribute('style', `height: ${document.documentElement.clientHeight}px`);
+
+//Обработка кликов по гексагонам
 
 let step = 0;
 
@@ -110,6 +117,7 @@ hexagons[4].addEventListener('click', () => {
   step = -2
 });
 
+//Функция одиночного шага прокрутки
 
 function scrollOnce(n) {
   for (let i = 0; i < hexagons.length; i++) {
@@ -121,23 +129,17 @@ function scrollOnce(n) {
   fillMiddleHex(hexagons.length-1-(n+2));
 }
 
-// window.onscroll = function(e) {
-//   // print "false" if direction is down and "true" if up
-//   console.log(this.oldScroll > this.scrollY);
-//   this.oldScroll = this.scrollY;
-// }
+//Обработка прокрутки
 
 let debounce_timer;
 
-// document.body.style.overflow = "hidden";
-
-window.onscroll = function(){
+window.onwheel = function(e){
   if (debounce_timer) {
     window.clearTimeout(debounce_timer);
   }
-  
+  console.log(e.deltaY);
   debounce_timer = window.setTimeout(function() {
-    if (this.oldScroll > this.scrollY) {
+    if (e.deltaY > 0) {
       if (step < 2) {
         step++;
         scrollOnce(step);
@@ -148,6 +150,5 @@ window.onscroll = function(){
         scrollOnce(step);
       }
     }
-    this.oldScroll = this.scrollY;
   }, 300);
 };
