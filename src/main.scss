@@ -17,11 +17,15 @@ body {
 
 h2 {
   margin: 0;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 18px;
 }
 
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 40px;
 }
 
@@ -35,6 +39,10 @@ a:hover {
   color: grey;
 }
 
+.main-nav {
+  margin-right: 40px;
+}
+
 .main-nav__list {
   list-style: none;
   margin: 0;
@@ -44,6 +52,54 @@ a:hover {
 
 .main-nav__item {
   margin-right: 40px;
+}
+
+.user-login {
+  margin-right: 60px;
+}
+
+.user-login__icon {
+  fill: white;
+  opacity: 0.9;
+  position: relative;
+  top: 5px;
+  transition: all 0.4s;
+}
+
+.user-login:hover .user-login__icon {
+  opacity: 0.3;
+}
+
+.user-nav {
+  display: inline-block;
+}
+
+.hidden-menu {
+  display: inline-block;
+  margin-top: -30px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  color: transparent;
+}
+
+.hidden-menu span {
+  content: "";
+  position: absolute;
+  top: 46px;
+  right: 45px;
+  width: 36px;
+  height: 2px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 8px 0 0 #ffffff, 0 16px 0 0 #ffffff;
+  box-shadow: 0 8px 0 0 #ffffff, 0 16px 0 0 #ffffff;
+  transition: all 0.4s;
+}
+
+.hidden-menu:hover span {
+  background-color: grey;
+  -webkit-box-shadow: 0 8px 0 0 grey, 0 16px 0 0 grey;
+  box-shadow: 0 8px 0 0 grey, 0 16px 0 0 grey;
 }
 
 .team {
@@ -190,4 +246,3 @@ a:hover {
   top: 21%;
   left: 79%;
 }
-
